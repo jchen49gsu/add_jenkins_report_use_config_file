@@ -42,8 +42,12 @@ for index, item in enumerate(list1, 1):
 
 ## Config file
 
-### desire format
-
+### desire format in jenkin_reg.cfg
+```python
+[section]
+[[subsection]]
+KEY=['value1", "value2"]
+```
 ### read
 ```python
 import ConfigParser
