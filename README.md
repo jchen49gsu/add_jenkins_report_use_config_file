@@ -98,14 +98,20 @@ nested_values is: ["['value1','value2']", '[]', "'\\sCPU\\s=\\s(\\S+)\\saverage_
 ```
 nested_values are string
 ```python
+print nested_values[0]
 print type(nested_values[0])
->>> <type 'str'>
+>>> 
+['value1','value2']
+<type 'str'>
 ```
 ******if need to change to be list for the nested_values, use this
 ```python
 nested_value_value = list(ast.literal_eval(conf.get("[subsection",nested_keys[0])))
+print nested_value_value
 print type(nested_value_value)
->>> <type 'list'>
+>>> 
+['value1', 'value2']
+<type 'list'>
 ```
 
 ### write
