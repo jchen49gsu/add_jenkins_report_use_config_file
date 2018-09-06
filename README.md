@@ -46,7 +46,9 @@ for index, item in enumerate(list1, 1):
 ```python
 [section]
 [[subsection]]
-KEY=['value1", "value2"]
+KEY1=['value1','value2']
+KEY2=[]
+KEY3='\sCPU\s=\s(\S+)\saverage_cycle\s=\s(\S+)\saverage_bw\s=\s(\S+)\siops\s=\s(\S+)\s.*'
 ```
 ### read
 ```python
@@ -54,9 +56,45 @@ import ConfigParser
 conf = ConfigParser.ConfigParser()
 conf.read("jenkins_reg.cfg")
 ```
+by default if will convert the character read from the config file to be lower case. For case sensitive, use this
+```python
+conf.optionxform = str
+```
 ### section
 ```python
 sec = conf.sections()
+print sec
+>>> ['section', '[subsection']
+
+key1= sec[0]
+key2 = sec[1][1:] #need to start from index 1
+print key1, key2
+>>> section subsection
+```
+### items (return a list)
+```python
+ITEMS1 =conf.items("section")
+ITEMS2 =conf.items("[subsection")
+print ITEMS1
+print ITEMS2
+
+>>>
+[]
+[('key1', "['value1','value2']"), ('key2', '[]'), ('key3', "'\\sCPU\\s=\\s(\\S+)\\saverage_cycle\\s=\\s(\\S+)\\saverage_bw\\s=\\s(\\S+)\\siops\\s=\\s(\\S+)\\s.*'")]
+
+```
+### nested keys and nested values in items
+```python
+nested_keys = []
+nested_values=[]
+for item in ITEMS2:
+	nested_keys.append(item[0])
+	nested_values.append(item[1])
+print nested_keys
+print "nested_values is:", nested_values
+['key1', 'key2', 'key3']
+nested_values is: ["['value1','value2']", '[]', "'\\sCPU\\s=\\s(\\S+)\\saverage_cycle\\s=\\s(\\S+)\\saverage_bw\\s=\\s(\\S+)\\siops\\s=\\s(\\S+)\\s.*'"]
+
 ```
 
 ### write
