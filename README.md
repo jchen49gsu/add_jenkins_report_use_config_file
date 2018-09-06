@@ -40,11 +40,11 @@ for index, item in enumerate(list1, 1):
 </pre>
 
 
-# Config file
+## Config file
 
-## desire format
+### desire format
 
-## read
+### read
 ```python
 import ConfigParser
 conf = ConfigParser.ConfigParser()
@@ -55,8 +55,8 @@ conf.read("jenkins_reg.cfg")
 sec = conf.sections()
 ```
 
-## write
-## subsection
+### write
+### subsection
 
 
 
