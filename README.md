@@ -56,7 +56,7 @@ import ConfigParser
 conf = ConfigParser.ConfigParser()
 conf.read("jenkins_reg.cfg")
 ```
-by default if will convert the character read from the config file to be lower case. For case sensitive, use this
+by default it will convert the character read from the config file to be lower case. For case sensitive, use this
 ```python
 conf.optionxform = str
 ```
@@ -92,9 +92,20 @@ for item in ITEMS2:
 	nested_values.append(item[1])
 print nested_keys
 print "nested_values is:", nested_values
+>>> 
 ['key1', 'key2', 'key3']
 nested_values is: ["['value1','value2']", '[]', "'\\sCPU\\s=\\s(\\S+)\\saverage_cycle\\s=\\s(\\S+)\\saverage_bw\\s=\\s(\\S+)\\siops\\s=\\s(\\S+)\\s.*'"]
-
+```
+nested_values are string
+```python
+print type(nested_values[0])
+>>> <type 'str'>
+```
+******if need to change to be list for the nested_values, use this
+```python
+nested_value_value = list(ast.literal_eval(conf.get("[subsection",nested_keys[0])))
+print type(nested_value_value)
+>>> <type 'list'>
 ```
 
 ### write
