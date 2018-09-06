@@ -60,7 +60,7 @@ by default it will convert the character read from the config file to be lower c
 ```python
 conf.optionxform = str
 ```
-### section
+### section and subsection
 ```python
 sec = conf.sections()
 print sec
@@ -128,9 +128,16 @@ print nested_value_value
 \sCPU\s=\s(\S+)\saverage_cycle\s=\s(\S+)\saverage_bw\s=\s(\S+)\siops\s=\s(\S+)\s.*
 
 ```
-
+**********Create nested dictionary
+```python
+dic ={}
+nested_values_dic = {}
+nested_values_dic["nested_key"] = "nested_value"
+dic["key"]=nested_values_dic
+print dic
+```
 ### write
-### subsection
+
 
 
 
