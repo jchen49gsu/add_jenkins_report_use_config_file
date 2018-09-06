@@ -114,6 +114,21 @@ print type(nested_value_value)
 <type 'list'>
 ```
 
+*****if need to change the list to be string, use this
+```python
+nested_value_value = list(ast.literal_eval(conf.get("[subsection",nested_keys[2])))
+print nested_value_value
+>>>
+['\\', 's', 'C', 'P', 'U', '\\', 's', '=', '\\', 's', '(', '\\', 'S', '+', ')', '\\', 's', 'a', 'v', 'e', 'r', 'a', 'g', 'e', '_', 'c', 'y', 'c', 'l', 'e', '\\', 's', '=', '\\', 's', '(', '\\', 'S', '+', ')', '\\', 's', 'a', 'v', 'e', 'r', 'a', 'g', 'e', '_', 'b', 'w', '\\', 's', '=', '\\', 's', '(', '\\', 'S', '+', ')', '\\', 's', 'i', 'o', 'p', 's', '\\', 's', '=', '\\', 's', '(', '\\', 'S', '+', ')', '\\', 's', '.', '*']
+
+nested_value_value=''.join(map(str,nested_value_value))
+print nested_value_value
+
+>>>
+\sCPU\s=\s(\S+)\saverage_cycle\s=\s(\S+)\saverage_bw\s=\s(\S+)\siops\s=\s(\S+)\s.*
+
+```
+
 ### write
 ### subsection
 
