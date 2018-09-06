@@ -38,3 +38,34 @@ for index, item in enumerate(list1, 1):
 3 一个
 4 测试
 </pre>
+
+
+##Config file
+###desire format
+
+###read
+```python
+import ConfigParser
+conf = ConfigParser.ConfigParser()
+conf.read("jenkins_reg.cfg")
+```
+####section
+```python
+sec = conf.sections()
+```
+####
+
+###write
+###subsection
+
+
+
+
+
+
+
+
+
+
+
+
