@@ -101,8 +101,8 @@ print dic
 
 
 
-###enumerate()使用
-•如果对一个列表，既要遍历索引又要遍历元素时，首先可以这样写：
+### enumerate()使用
+如果对一个列表，既要遍历索引又要遍历元素时，首先可以这样写：
 ```python
 list1 = ["这", "是", "一个", "测试"]
 for i in range (len(list1)):
@@ -110,7 +110,7 @@ for i in range (len(list1)):
 2
 3
 ```
-•上述方法有些累赘，利用enumerate()会更加直接和优美：
+上述方法有些累赘，利用enumerate()会更加直接和优美：
 ```python
 list1 = ["这", "是", "一个", "测试"]
 for index, item in enumerate(list1):
@@ -140,9 +140,21 @@ for index, item in enumerate(list1, 1):
 3 一个
 4 测试
 ```
+### regular expression
+```python
+import re
+text = "good is not bad, but cool"
+regex=re.compile(r'\w*oo\w*')
+print regex.findall(text) #查找所有包含'oo'的单词
+```
+link to test re
+https://regex101.com/
 
+```python
+\sCPU\s=\s(\S+)\saverage_cycle\s=\s(\S+)\saverage_bw\s=\s(\S+)\siops\s=\s(\S+)\s.*
+\s matches any whitespace character (equal to [\r\n\t\f\v ])
 
-
+```
 
 
 
