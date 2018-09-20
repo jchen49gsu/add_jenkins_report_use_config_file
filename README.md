@@ -156,9 +156,15 @@ https://regex101.com/
 
 ```
 
+## PDB
+
+Two way to do the debug with terminal:
+1. use python file.py and set break point
+2. use python -m pdb file.py and in the file.py import pdb and pdb.set_trace()
 
 
 
 
+https://www.cnblogs.com/jiayongji/p/7469214.html
 
 
